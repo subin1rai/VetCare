@@ -56,7 +56,16 @@ class _LoginState extends State<Login> {
           const SizedBox(height: 5,),
             Column(
               children: [
-                 Text(
+                 Text
+                 (
+                          "Login",
+                          style: GoogleFonts.outfit(
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            fontSize: 32,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                          Text(
                           "Login",
                           style: GoogleFonts.outfit(
                             color: Color.fromARGB(255, 0, 0, 0),
