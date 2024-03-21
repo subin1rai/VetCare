@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vetapp/Screen/Login.dart';
+import 'package:vetapp/Screen/Register.dart';
 
 class Register2 extends StatefulWidget {
   const Register2({super.key});
@@ -33,14 +35,16 @@ class _Register2State extends State<Register2> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Register",
-                          style: GoogleFonts.outfit(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+
+                        
+                            Text(
+                              "Register",
+                              style: GoogleFonts.outfit(
+                                color: Color.fromARGB(255, 255, 255, 255),
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                         Text(
                           "Create your new account",
                           style: GoogleFonts.outfit(
@@ -204,74 +208,34 @@ class _Register2State extends State<Register2> {
         
             const SizedBox(height: 10),
               Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(right:20, left: 20),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pop(context);
-                              },
-                              child: Container(
-                                margin: EdgeInsets.only(top: 20),
-                                padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
-                                width: 160,
-                                height: 56,
-                                child: Text(
-                                  'Back',
-                                  textAlign: TextAlign.center,
-                                  style: GoogleFonts.inter(
-                                    textStyle: TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.w600,
-                                      color: Color.fromARGB(255, 13, 13, 13),
-                                    ),
-                                  ),
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(30),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(95, 176, 176, 176),
-                          blurRadius: 10,
-                          offset: Offset(2, 5),
-                        ),
-                      ],
-                    ),)),
-                                GestureDetector(
-                          onTap: () {
-                              Navigator.push(
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => (Login())),
+                                builder: (context) => (Register())),
                           );
-                          },
-                          child: Container(
-                            margin: EdgeInsets.only(top: 20),
-                            padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
-                            width: 160,
-                            height: 56,
-                            child: Text(
-                              'Register',
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.inter(
-                                textStyle: TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w600,
-                                  color: Colors.white,
-                                ),
+                        },
+                        child: Container(
+                          margin: EdgeInsets.only(top: 20),
+                          padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
+                          width: 337,
+                          height: 56,
+                          child: Text(
+                            'Next',
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.inter(
+                              textStyle: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
                               ),
                             ),
-                            decoration: BoxDecoration(
-                              color: Color(0xFF9791BB),
-                              borderRadius: BorderRadius.circular(30),
-                            ),)),
-                        
-                          ],
-                        ),
-                      ),
+                          ),
+                          decoration: BoxDecoration(
+                            color: Color(0xFF9791BB),
+                            borderRadius: BorderRadius.circular(30),
+                          ),)),
                           ),
                           SizedBox(height: 30,),
                           Row(

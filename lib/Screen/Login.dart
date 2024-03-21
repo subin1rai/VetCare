@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vetapp/Screen/HomePage.dart';
+import 'package:vetapp/Screen/Register.dart';
+import 'package:vetapp/Screen/register2.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -56,15 +60,6 @@ class _LoginState extends State<Login> {
           const SizedBox(height: 5,),
             Column(
               children: [
-                 Text
-                 (
-                          "Login",
-                          style: GoogleFonts.outfit(
-                            color: Color.fromARGB(255, 0, 0, 0),
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
                           Text(
                           "Login",
                           style: GoogleFonts.outfit(
@@ -189,7 +184,11 @@ class _LoginState extends State<Login> {
               Center(
                       child: GestureDetector(
                         onTap: () {
-                       
+                           Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ((HomePage()))),
+                          );
                         },
                         child: Container(
                           margin: EdgeInsets.only(top: 20),
@@ -197,7 +196,7 @@ class _LoginState extends State<Login> {
                           width: 337,
                           height: 56,
                           child: Text(
-                            'Next',
+                            'Login',
                             textAlign: TextAlign.center,
                             style: GoogleFonts.inter(
                               textStyle: TextStyle(
@@ -217,8 +216,16 @@ class _LoginState extends State<Login> {
                             // crossAxisAlignment: CrossAxisAlignment.center,
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text("Already had an account? ", style: GoogleFonts.outfit(fontSize:16),),
-                              Text("Login", style: GoogleFonts.outfit(fontSize:16, color:Colors.orange),),
+                              Text("Don't have an Account! ", style: GoogleFonts.outfit(fontSize:16),),
+                              GestureDetector(
+                                onTap: () {
+                                   Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => (Register())),
+                          );
+                                },
+                                child: Text("Sign up", style: GoogleFonts.outfit(fontSize:16, color:Colors.orange),)),
                             ],
                           )
           ],

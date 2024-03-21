@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vetapp/Screen/HomePage.dart';
+import 'package:vetapp/Screen/Login.dart';
 import 'package:vetapp/Screen/register2.dart';
 
 class Register extends StatefulWidget {
@@ -32,13 +36,23 @@ class _RegisterState extends State<Register> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Register",
-                          style: GoogleFonts.outfit(
-                            color: Color.fromARGB(255, 255, 255, 255),
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        Row(
+                          children: [
+                            GestureDetector(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: const Icon(Icons.arrow_back_ios,
+                                    color: Colors.white)),
+                            Text(
+                              "Register",
+                              style: GoogleFonts.outfit(
+                                color: Color.fromARGB(255, 255, 255, 255),
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                         Text(
                           "Create your new account",
@@ -185,48 +199,62 @@ class _RegisterState extends State<Register> {
                 ],
               ),
             ),
-          
-        
             const SizedBox(height: 10),
-              Center(
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => (Register2())),
-                          );
-                        },
-                        child: Container(
-                          margin: EdgeInsets.only(top: 20),
-                          padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
-                          width: 337,
-                          height: 56,
-                          child: Text(
-                            'Next',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.inter(
-                              textStyle: TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          decoration: BoxDecoration(
-                            color: Color(0xFF9791BB),
-                            borderRadius: BorderRadius.circular(30),
-                          ),)),
-                          ),
-                          SizedBox(height: 30,),
-                          Row(
-                            // crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("Already had an account? ", style: GoogleFonts.outfit(fontSize:16),),
-                              Text("Login", style: GoogleFonts.outfit(fontSize:16, color:Colors.orange),),
-                            ],
-                          )
+            Center(
+              child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => (HomePage())),
+                    );
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(top: 20),
+                    padding: EdgeInsets.fromLTRB(20, 12, 20, 0),
+                    width: 337,
+                    height: 56,
+                    child: Text(
+                      'Register',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.inter(
+                        textStyle: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color(0xFF9791BB),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                  )),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Row(
+              // crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Already had an account? ",
+                  style: GoogleFonts.outfit(fontSize: 16),
+                ),
+                GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => (Login())),
+                      );
+                    },
+                    child: Text(
+                      "Login",
+                      style: GoogleFonts.outfit(
+                          fontSize: 16, color: Colors.orange),
+                    )),
+              ],
+            )
           ],
         ),
       ),
