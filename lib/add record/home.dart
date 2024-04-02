@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
                     fontWeight: FontWeight.bold, fontSize: 24),
               ),
               const SizedBox(height: 10),
-              Text("No pets yet.", style: TextStyle(fontSize: 18)),
+              // Text("No pets yet.", style: TextStyle(fontSize: 18)),
               const SizedBox(
                 height: 10,
               ),
@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                               Container(
                                 height: 30,
-                                width: 110,
+                                width: 120,
                                 decoration: BoxDecoration(
                                     color: Color.fromARGB(255, 197, 193, 255),
                                     borderRadius: BorderRadius.circular(9)),
@@ -118,14 +118,18 @@ class _HomePageState extends State<HomePage> {
                                     color: const Color(0xffFE750B),
                                     borderRadius: BorderRadius.circular(8)),
                                 child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(10,5,10,5),
+                                  padding:
+                                      const EdgeInsets.fromLTRB(10, 5, 10, 5),
                                   child: Row(
                                     children: [
                                       const Icon(
                                         CupertinoIcons.add,
-                                        color: Color.fromARGB(255, 255, 255, 255),
+                                        color:
+                                            Color.fromARGB(255, 255, 255, 255),
                                       ),
-                                      SizedBox(width: 4,),
+                                      SizedBox(
+                                        width: 4,
+                                      ),
                                       Text(
                                         "Add record",
                                         style: GoogleFonts.poppins(
@@ -145,11 +149,12 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Icon(Icons.add, color: Color.fromARGB(255, 129, 108, 251)),
+                  const Icon(Icons.add,
+                      color: Color.fromARGB(255, 129, 108, 251)),
                   GestureDetector(
                     child: Text("Add Pet",
                         style: GoogleFonts.poppins(
@@ -159,6 +164,109 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
+              const SizedBox(height: 10),
+              Text("Upcomming reminders",
+                  style: GoogleFonts.poppins(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black)),
+              const SizedBox(height: 15),
+              Container(
+                height: 120,
+                width: 420,
+                decoration: BoxDecoration(
+                    color: Color(0xffE7E4FF),
+                    borderRadius: BorderRadius.circular(15)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(10,10,0,0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                        Text("Reminder",style:  GoogleFonts.poppins(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black)),
+                        Container(
+                          padding: const EdgeInsets.fromLTRB(5,5,5,5),
+                          margin: const EdgeInsets.only(right: 15),
+                           decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 255, 255, 255),
+                        borderRadius: BorderRadius.circular(5)),
+                          child: Text("Next Month",style:  GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color:  const Color(0xff5947D6)),),
+                        ),
+                      ],),
+                    ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10.0),
+                    child: const Text("05-Apr-2024 at 9:15 PM"),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                      Container(
+                        width: 150,
+                            padding: const EdgeInsets.fromLTRB(15,10,15,10),
+                            margin: const EdgeInsets.only(right: 15),
+                             decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                          borderRadius: BorderRadius.circular(5)),
+                            child: Row(
+                            
+                              children: [
+                               const Padding(
+                                  padding:  EdgeInsets.only(right: 10.0),
+                                  child: Icon(
+                                          CupertinoIcons.checkmark_alt,
+                                          color: Color(0xff5947D6),
+                                        ),
+                                ),
+                                Text("Complete",style:  GoogleFonts.poppins(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color:  const Color(0xff5947D6)),),
+                              ],
+                            ),
+                          ),
+                           Container(
+                        width: 150,
+                            padding: const EdgeInsets.fromLTRB(15,10,15,10),
+                            margin: const EdgeInsets.only(right: 15),
+                             decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 255, 255, 255),
+                          borderRadius: BorderRadius.circular(5)),
+                            child: Row(
+                            
+                              children: [
+                               const Padding(
+                                  padding: const EdgeInsets.only(right: 10.0),
+                                  child:  Icon(
+                                          CupertinoIcons.eye,
+                                          color: Color(0xff5947D6),
+                                        ),
+                                ),
+                                Text("View record",style:  GoogleFonts.poppins(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color:  const Color(0xff5947D6)),),
+                              ],
+                            ),
+                          ),
+                    ],),
+                  )
+                  ],
+                ),
+              ),
+
+
             ],
           )),
     );
