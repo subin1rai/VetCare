@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vetapp/add%20record/add_record.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -113,31 +115,40 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(
                                 height: 15,
                               ),
-                              Container(
-                                decoration: BoxDecoration(
-                                    color: const Color(0xffFE750B),
-                                    borderRadius: BorderRadius.circular(8)),
-                                child: Padding(
-                                  padding:
-                                      const EdgeInsets.fromLTRB(10, 5, 10, 5),
-                                  child: Row(
-                                    children: [
-                                      const Icon(
-                                        CupertinoIcons.add,
-                                        color:
-                                            Color.fromARGB(255, 255, 255, 255),
-                                      ),
-                                      SizedBox(
-                                        width: 4,
-                                      ),
-                                      Text(
-                                        "Add record",
-                                        style: GoogleFonts.poppins(
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 20,
-                                            color: Colors.white),
-                                      ),
-                                    ],
+                              GestureDetector(
+                                onTap: () {
+                                   Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => (AddRecord())),
+                          );
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xffFE750B),
+                                      borderRadius: BorderRadius.circular(8)),
+                                  child: Padding(
+                                    padding:
+                                        const EdgeInsets.fromLTRB(10, 5, 10, 5),
+                                    child: Row(
+                                      children: [
+                                        const Icon(
+                                          CupertinoIcons.add,
+                                          color:
+                                              Color.fromARGB(255, 255, 255, 255),
+                                        ),
+                                        SizedBox(
+                                          width: 4,
+                                        ),
+                                        Text(
+                                          "Add record",
+                                          style: GoogleFonts.poppins(
+                                              fontWeight: FontWeight.w400,
+                                              fontSize: 20,
+                                              color: Colors.white),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),

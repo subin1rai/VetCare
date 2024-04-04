@@ -23,7 +23,7 @@ class _AddRecordState extends State<AddRecord> {
               Row(children: [
                 GestureDetector(
                   onTap: () {
-                    
+                    Navigator.pop(context);
                   },
                   child: Container(
                       decoration: BoxDecoration(

@@ -23,7 +23,7 @@ class _OnloadingScreenState extends State<OnloadingScreen> {
             alignment: Alignment.center,
             children: [
               Image.asset(
-                'assets/image1.png',
+                'assets/back.png',
                 fit: BoxFit.cover,
                 width: 500,
                 height: 350,

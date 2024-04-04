@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:vetapp/Screen/Login.dart';
 import 'package:vetapp/Screen/register2.dart';
 import 'package:vetapp/add%20record/home.dart';
+import 'package:vetapp/add%20record/nav.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -205,7 +206,7 @@ class _RegisterState extends State<Register> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => (HomePage())),
+                      MaterialPageRoute(builder: (context) => (BottomNavbar())),
                     );
                   },
                   child: Container(
