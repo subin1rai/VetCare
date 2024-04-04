@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vetapp/add%20record/add.dart';
 import 'package:vetapp/add%20record/add_record.dart';
 
 class HomePage extends StatefulWidget {
@@ -117,11 +118,11 @@ class _HomePageState extends State<HomePage> {
                               ),
                               GestureDetector(
                                 onTap: () {
-                                   Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => (AddRecord())),
-                          );
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => (AddRecord())),
+                                  );
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
@@ -134,8 +135,8 @@ class _HomePageState extends State<HomePage> {
                                       children: [
                                         const Icon(
                                           CupertinoIcons.add,
-                                          color:
-                                              Color.fromARGB(255, 255, 255, 255),
+                                          color: Color.fromARGB(
+                                              255, 255, 255, 255),
                                         ),
                                         SizedBox(
                                           width: 4,
@@ -161,19 +162,27 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               const SizedBox(height: 30),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Icon(Icons.add,
-                      color: Color.fromARGB(255, 129, 108, 251)),
-                  GestureDetector(
-                    child: Text("Add Pet",
-                        style: GoogleFonts.poppins(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: Color.fromARGB(255, 129, 108, 251))),
-                  ),
-                ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => (AddPicture())),
+                  );
+                },
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.add,
+                        color: Color.fromARGB(255, 129, 108, 251)),
+                    GestureDetector(
+                      child: Text("Add Pet",
+                          style: GoogleFonts.poppins(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: Color.fromARGB(255, 129, 108, 251))),
+                    ),
+                  ],
+                ),
               ),
               const SizedBox(height: 10),
               Text("Upcomming reminders",
@@ -192,92 +201,100 @@ class _HomePageState extends State<HomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(10,10,0,0),
+                      padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                        Text("Reminder",style:  GoogleFonts.poppins(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black)),
-                        Container(
-                          padding: const EdgeInsets.fromLTRB(5,5,5,5),
-                          margin: const EdgeInsets.only(right: 15),
-                           decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 255, 255, 255),
-                        borderRadius: BorderRadius.circular(5)),
-                          child: Text("Next Month",style:  GoogleFonts.poppins(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                                color:  const Color(0xff5947D6)),),
-                        ),
-                      ],),
+                          Text("Reminder",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                          Container(
+                            padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                            margin: const EdgeInsets.only(right: 15),
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: Text(
+                              "Next Month",
+                              style: GoogleFonts.poppins(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: const Color(0xff5947D6)),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10.0),
-                    child: const Text("05-Apr-2024 at 9:15 PM"),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                      Container(
-                        width: 150,
-                            padding: const EdgeInsets.fromLTRB(15,10,15,10),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: const Text("05-Apr-2024 at 9:15 PM"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: 150,
+                            padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
                             margin: const EdgeInsets.only(right: 15),
-                             decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 255, 255, 255),
-                          borderRadius: BorderRadius.circular(5)),
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                                borderRadius: BorderRadius.circular(5)),
                             child: Row(
-                            
                               children: [
-                               const Padding(
-                                  padding:  EdgeInsets.only(right: 10.0),
+                                const Padding(
+                                  padding: EdgeInsets.only(right: 10.0),
                                   child: Icon(
-                                          CupertinoIcons.checkmark_alt,
-                                          color: Color(0xff5947D6),
-                                        ),
+                                    CupertinoIcons.checkmark_alt,
+                                    color: Color(0xff5947D6),
+                                  ),
                                 ),
-                                Text("Complete",style:  GoogleFonts.poppins(
+                                Text(
+                                  "Complete",
+                                  style: GoogleFonts.poppins(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w600,
-                                      color:  const Color(0xff5947D6)),),
+                                      color: const Color(0xff5947D6)),
+                                ),
                               ],
                             ),
                           ),
-                           Container(
-                        width: 150,
-                            padding: const EdgeInsets.fromLTRB(15,10,15,10),
+                          Container(
+                            width: 150,
+                            padding: const EdgeInsets.fromLTRB(15, 10, 15, 10),
                             margin: const EdgeInsets.only(right: 15),
-                             decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 255, 255, 255),
-                          borderRadius: BorderRadius.circular(5)),
+                            decoration: BoxDecoration(
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                                borderRadius: BorderRadius.circular(5)),
                             child: Row(
-                            
                               children: [
-                               const Padding(
+                                const Padding(
                                   padding: const EdgeInsets.only(right: 10.0),
-                                  child:  Icon(
-                                          CupertinoIcons.eye,
-                                          color: Color(0xff5947D6),
-                                        ),
+                                  child: Icon(
+                                    CupertinoIcons.eye,
+                                    color: Color(0xff5947D6),
+                                  ),
                                 ),
-                                Text("View record",style:  GoogleFonts.poppins(
+                                Text(
+                                  "View record",
+                                  style: GoogleFonts.poppins(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w600,
-                                      color:  const Color(0xff5947D6)),),
+                                      color: const Color(0xff5947D6)),
+                                ),
                               ],
                             ),
                           ),
-                    ],),
-                  )
+                        ],
+                      ),
+                    )
                   ],
                 ),
               ),
-
-
             ],
           )),
     );

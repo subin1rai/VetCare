@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vetapp/Screen/Register.dart';
+import 'package:vetapp/Screen/register2.dart';
 
 class OnloadingScreen extends StatefulWidget {
   const OnloadingScreen({super.key});
@@ -110,7 +111,7 @@ class _OnloadingScreenState extends State<OnloadingScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => (Register())),
+                                builder: (context) => (Register2())),
                           );
                         },
                         //get start

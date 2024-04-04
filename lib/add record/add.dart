@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:vetapp/Screen/create.dart';
+import 'package:vetapp/Screen/kind.dart';
 
 class AddPicture extends StatefulWidget {
   const AddPicture({super.key});
@@ -18,12 +21,21 @@ class _AddPictureState extends State<AddPicture> {
         child: Column(
           children: [
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-              Container(
-                  decoration: BoxDecoration(
-                      color: Color(0xFFE7E4FF),
-                      borderRadius: BorderRadius.circular(12)),
-                  padding: EdgeInsets.all(15),
-                  child: const Icon(CupertinoIcons.back,color: Color(0xff5947D6),size: 30,)),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Container(
+                    decoration: BoxDecoration(
+                        color: Color(0xFFE7E4FF),
+                        borderRadius: BorderRadius.circular(12)),
+                    padding: EdgeInsets.all(15),
+                    child: const Icon(
+                      CupertinoIcons.back,
+                      color: Color(0xff5947D6),
+                      size: 30,
+                    )),
+              ),
               Text("Skip",
                   style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w600, fontSize: 20))
@@ -38,20 +50,38 @@ class _AddPictureState extends State<AddPicture> {
               height: 10,
             ),
             Container(
-              height: 120,
-              width:120,
+                height: 120,
+                width: 120,
                 decoration: BoxDecoration(
                     color: const Color(0xffE7E4FF),
                     borderRadius: BorderRadius.circular(12)),
-                child: const Icon(CupertinoIcons.camera_fill, size: 50,color: Color(0xff5947D6),)),
-              const Spacer(),
-                Container(
-                  padding: const EdgeInsets.fromLTRB(80,10,80,10),
-                   decoration: BoxDecoration(
+                child: const Icon(
+                  CupertinoIcons.camera_fill,
+                  size: 50,
+                  color: Color(0xff5947D6),
+                )),
+            const Spacer(),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => (Choose())),
+                );
+              },
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(80, 10, 80, 10),
+                decoration: BoxDecoration(
                     color: const Color(0xffFE750B),
                     borderRadius: BorderRadius.circular(12)),
-                  child: Text("Next", style: GoogleFonts.poppins(fontWeight: FontWeight.w500, fontSize: 28, color:Colors.white),),
+                child: Text(
+                  "Next",
+                  style: GoogleFonts.poppins(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 28,
+                      color: Colors.white),
                 ),
+              ),
+            ),
           ],
         ),
       ),
